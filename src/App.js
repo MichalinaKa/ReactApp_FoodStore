@@ -1,24 +1,31 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from 'react';
 import "./App.css";
+import FoodStoreContainer from "./components/FoodStoreContainer"
+import ShoppingList from "./components/ShoppingList/ShoppingList";
+import ListItem from "./components/ListItem/ListItem"
 
-class FoodStore extends Component {
-  render() {
-    return (
-      <div>
-        <h1>{this.props.title}</h1>
-      </div>
-    );
-  }
-}
 
-function App() {
-  return (
+class App extends React.Component {
+  render(){
+      return (
     <div className="App">
-      <FoodStore title="Food store" />
-      TO będzie moja aplikacja
-    </div>
+          <FoodStoreContainer title="Food store"/>
+        <ShoppingList/>
+    <ListItem/>
+   
+  </div>
   );
+  }
+
+
+  componentDidMount = () => {
+    const todos = localStorage.getItem('todos');
+    if(todos) {
+      console.log('Has todos', todos);
+    }else{
+      console.log('No todos')
+    }
+  }
 }
 
 export default App;
