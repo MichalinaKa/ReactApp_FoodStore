@@ -1,5 +1,9 @@
 body {
-  
+  box-sizing: border-box;
   font-family: 'Cutive Mono', monospace;
-font-family: 'Space Mono', monospace;
+  font-family: 'Space Mono', monospace;
+}
+
+.container{
+   padding: 100px;
 }
